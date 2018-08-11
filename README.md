@@ -1,8 +1,8 @@
 ﻿# HandyNotes: Mole Machine
 
-[Curse]()
+[Curse](https://www.curseforge.com/wow/addons/handynotes-mole-machine)
 
-[WoWInterface]()
+[WoWInterface](http://www.wowinterface.com/downloads/info24766-HandyNotesMoleMachine.html)
 
 ## COPYRIGHT
 
