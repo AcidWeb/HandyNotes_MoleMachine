@@ -45,26 +45,26 @@ HN.Options = {
 }
 
 HN.Drills = {
-  [13534680] = {26, L["Aerie Peak"], 53585},
-  [31517359] = {390, L["Stormstout Brewery"], 53598},
-  [33302480] = {35, L["The Masonary"], 53587},
-  [39110930] = {199, L["The Great Divide"], 53600},
-  [44667290] = {650, L["Neltharion's Vault"], 53593},
-  [45354992] = {115, L["Ruby Dragonshrine"], 53596},
-  [46693876] = {543, L["Blackrock Foundry Overlook"], 53588},
-  [50773530] = {104, L["Fel Pits"], 53599},
-  [50931607] = {35, L["Shadowforge City"], nil},
-  [52885576] = {78, L["Fire Plume Ridge"], 53591},
-  [57187711] = {198, L["Throne of Flame"], 53601},
-  [57686281] = {379, L["One Keg"], 53595},
-  [61293718] = {27, L["Ironforge"], nil},
-  --[61442435] = {1186, L["Shadowforge City"], nil},
-  [61971280] = {17, L["Nethergarde Keep"], 53594},
-  [63333734] = {84, L["Stormwind"], nil},
-  [65750825] = {550, L["Elemental Plateau"], 53590},
-  [71694799] = {646, L["Broken Shore"], 53589},
-  [72421764] = {105, L["Skald"], 53597},
-  [76971866] = {118, L["Argent Tournament Grounds"], 53586}
+  [13534680] = {["mapID"] = 26, ["name"] = L["Aerie Peak"], ["questID"] = 53585},
+  [31517359] = {["mapID"] = 390, ["name"] = L["Stormstout Brewery"], ["questID"] = 53598},
+  [33302480] = {["mapID"] = 35, ["name"] = L["The Masonary"], ["questID"] = 53587, ["note"] = L["Inside Blackrock Mountain"]},
+  [39110930] = {["mapID"] = 199, ["name"] = L["The Great Divide"], ["questID"] = 53600},
+  [44667290] = {["mapID"] = 650, ["name"] = L["Neltharion's Vault"], ["questID"] = 53593},
+  [45354992] = {["mapID"] = 115, ["name"] = L["Ruby Dragonshrine"], ["questID"] = 53596},
+  [46693876] = {["mapID"] = 543, ["name"] = L["Blackrock Foundry Overlook"], ["questID"] = 53588},
+  [50773530] = {["mapID"] = 104, ["name"] = L["Fel Pits"], ["questID"] = 53599},
+  [50931607] = {["mapID"] = 35, ["name"] = L["Shadowforge City"], ["questID"] = nil, ["note"] = L["Inside Blackrock Mountain"]},
+  [52885576] = {["mapID"] = 78, ["name"] = L["Fire Plume Ridge"], ["questID"] = 53591},
+  [57187711] = {["mapID"] = 198, ["name"] = L["Throne of Flame"], ["questID"] = 53601},
+  [57686281] = {["mapID"] = 379, ["name"] = L["One Keg"], ["questID"] = 53595},
+  [61293718] = {["mapID"] = 27, ["name"] = L["Ironforge"], ["questID"] = nil},
+  --[61442435] = {["mapID"] = 1186, ["name"] = L["Shadowforge City"], ["questID"] = nil, ["note"] = L["Inside Blackrock Mountain"]},
+  [61971280] = {["mapID"] = 17, ["name"] = L["Nethergarde Keep"], ["questID"] = 53594},
+  [63333734] = {["mapID"] = 84, ["name"] = L["Stormwind"], ["questID"] = nil},
+  [65750825] = {["mapID"] = 550, ["name"] = L["Elemental Plateau"], ["questID"] = 53590},
+  [71694799] = {["mapID"] = 646, ["name"] = L["Broken Shore"], ["questID"] = 53589},
+  [72421764] = {["mapID"] = 105, ["name"] = L["Skald"], ["questID"] = 53597},
+  [76971866] = {["mapID"] = 118, ["name"] = L["Argent Tournament Grounds"], ["questID"] = 53586}
 }
 
 local function ElvUISwag(sender)
@@ -92,8 +92,11 @@ function HN.Plugin:OnEnter(_, coord)
   end
   local drill = HN.Drills[coord]
   if drill then
-    tooltip:AddLine(drill[2])
-    if drill[3] and not IsQuestFlaggedCompleted(drill[3]) then
+    tooltip:AddLine(drill.name)
+    if drill.note then
+      tooltip:AddLine(drill.note, 1, 1, 1)
+    end
+    if drill.questID and not IsQuestFlaggedCompleted(drill.questID) then
       tooltip:AddLine(L["Undiscovered"], 1, 0, 0)
     end
     tooltip:Show()
@@ -110,9 +113,9 @@ local function Iterator(t, last)
   local k, v = next(t, last)
   while k do
     if v then
-      if v[1] == HN.CurrentMap or (HN.ContinentData[HN.CurrentMap] and HN.ContinentData[HN.CurrentMap] ~= 0 and HN:CheckMap(v[1])) then
-        local icon = (v[3] and not IsQuestFlaggedCompleted(v[3])) and "MiniMap-DeadArrow" or "MiniMap-QuestArrow"
-        return k, v[1], "Interface\\Minimap\\"..icon, HN.Config.Scale, HN.Config.Alpha
+      if v.mapID == HN.CurrentMap or (HN.ContinentData[HN.CurrentMap] and HN.ContinentData[HN.CurrentMap] ~= 0 and HN:CheckMap(v.mapID)) then
+        local icon = (v.questID and not IsQuestFlaggedCompleted(v.questID)) and "MiniMap-DeadArrow" or "MiniMap-QuestArrow"
+        return k, v.mapID, "Interface\\Minimap\\"..icon, HN.Config.Scale, HN.Config.Alpha
       end
     end
     k, v = next(t, k)

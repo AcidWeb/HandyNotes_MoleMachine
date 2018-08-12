@@ -26,4 +26,5 @@ L["Broken Shore"] = true
 L["Skald"] = true
 L["Argent Tournament Grounds"] = true
 
+L["Inside Blackrock Mountain"] = true
 L["Undiscovered"] = true
