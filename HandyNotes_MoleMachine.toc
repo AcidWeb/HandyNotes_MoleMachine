@@ -9,4 +9,5 @@
 ## X-Curse-Project-ID: 300570
 ## X-WoWI-ID: 24766
 
+Locale\Locale.xml
 HandyNotes_MoleMachine.lua

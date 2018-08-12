@@ -1,5 +1,6 @@
 local _G = _G
 local _, HN = ...
+local L = LibStub("AceLocale-3.0"):GetLocale("HandyNotes_MoleMachine")
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 _G.HNMoleMachine = HN
 
@@ -15,7 +16,7 @@ HN.ContinentData = {}
 HN.DefaultSettings = {["Alpha"] = 1, ["Scale"] = 2.5}
 HN.Options = {
   type = "group",
-  name = "Mole Machine",
+  name = L["Mole Machine"],
   get = function(info)
     return HN.Config[info.arg]
   end,
@@ -26,16 +27,16 @@ HN.Options = {
   args = {
     scale = {
       type = "range",
-      name = "Icon Scale",
-      desc = "The scale of the icons.",
+      name = L["Icon scale"],
+      desc = L["The scale of the icons."],
       min = 0.25, max = 5, step = 0.05,
       arg = "Scale",
       order = 10,
     },
     alpha = {
       type = "range",
-      name = "Icon Alpha",
-      desc = "The alpha transparency of the icons.",
+      name = L["Icon alpha"],
+      desc = L["The alpha transparency of the icons."],
       min = 0, max = 1, step = 0.01,
       arg = "Alpha",
       order = 20,
@@ -44,26 +45,26 @@ HN.Options = {
 }
 
 HN.Drills = {
-  [13534680] = {26, "Aerie Peak", 53585},
-  [31517359] = {390, "Stormstout Brewery", 53598},
-  [33302480] = {35, "The Masonary", 53587},
-  [39110930] = {199, "The Great Divide", 53600},
-  [44667290] = {650, "Neltharion's Vault", 53593},
-  [45354992] = {115, "Ruby Dragonshrine", 53596},
-  [46693876] = {543, "Blackrock Foundry Overlook", 53588},
-  [50773530] = {104, "Fel Pits", 53599},
-  [50931607] = {35, "Shadowforge City", nil},
-  [52885576] = {78, "Fire Plume Ridge", 53591},
-  [57187711] = {198, "Throne of Flame", 53601},
-  [57686281] = {379, "One Keg", 53595},
-  [61293718] = {27, "Ironforge", nil},
-  --[61442435] = {1186, "Shadowforge City", nil},
-  [61971280] = {17, "Nethergarde Keep", 53594},
-  [63333734] = {84, "Stormwind", nil},
-  [65750825] = {550, "Elemental Plateau", 53590},
-  [71694799] = {646, "Broken Shore", 53589},
-  [72421764] = {105, "Skald", 53597},
-  [76971866] = {118, "Argent Tournament Grounds", 53586}
+  [13534680] = {26, L["Aerie Peak"], 53585},
+  [31517359] = {390, L["Stormstout Brewery"], 53598},
+  [33302480] = {35, L["The Masonary"], 53587},
+  [39110930] = {199, L["The Great Divide"], 53600},
+  [44667290] = {650, L["Neltharion's Vault"], 53593},
+  [45354992] = {115, L["Ruby Dragonshrine"], 53596},
+  [46693876] = {543, L["Blackrock Foundry Overlook"], 53588},
+  [50773530] = {104, L["Fel Pits"], 53599},
+  [50931607] = {35, L["Shadowforge City"], nil},
+  [52885576] = {78, L["Fire Plume Ridge"], 53591},
+  [57187711] = {198, L["Throne of Flame"], 53601},
+  [57686281] = {379, L["One Keg"], 53595},
+  [61293718] = {27, L["Ironforge"], nil},
+  --[61442435] = {1186, L["Shadowforge City"], nil},
+  [61971280] = {17, L["Nethergarde Keep"], 53594},
+  [63333734] = {84, L["Stormwind"], nil},
+  [65750825] = {550, L["Elemental Plateau"], 53590},
+  [71694799] = {646, L["Broken Shore"], 53589},
+  [72421764] = {105, L["Skald"], 53597},
+  [76971866] = {118, L["Argent Tournament Grounds"], 53586}
 }
 
 local function ElvUISwag(sender)
@@ -93,7 +94,7 @@ function HN.Plugin:OnEnter(_, coord)
   if drill then
     tooltip:AddLine(drill[2])
     if drill[3] and not IsQuestFlaggedCompleted(drill[3]) then
-      tooltip:AddLine("Undiscovered", 1, 0, 0)
+      tooltip:AddLine(L["Undiscovered"], 1, 0, 0)
     end
     tooltip:Show()
   end
