@@ -46,7 +46,7 @@ HN.Options = {
 
 HN.Drills = {
   [13534680] = {["mapID"] = 26, ["name"] = L["Aerie Peak"], ["questID"] = 53585},
-  [31517359] = {["mapID"] = 390, ["name"] = L["Stormstout Brewery"], ["questID"] = 53598},
+  [31517359] = {["mapID"] = 376, ["name"] = L["Stormstout Brewery"], ["questID"] = 53598},
   [33302480] = {["mapID"] = 35, ["name"] = L["The Masonary"], ["questID"] = 53587, ["note"] = L["Inside Blackrock Mountain"]},
   [39110930] = {["mapID"] = 199, ["name"] = L["The Great Divide"], ["questID"] = 53600},
   [44667290] = {["mapID"] = 650, ["name"] = L["Neltharion's Vault"], ["questID"] = 53593},
