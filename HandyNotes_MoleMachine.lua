@@ -55,6 +55,7 @@ HN.Drills = {
   [50773530] = {["mapID"] = 104, ["name"] = L["Fel Pits"], ["questID"] = 53599},
   [50931607] = {["mapID"] = 35, ["name"] = L["Shadowforge City"], ["questID"] = nil, ["note"] = L["Inside Blackrock Mountain"]},
   [52885576] = {["mapID"] = 78, ["name"] = L["Fire Plume Ridge"], ["questID"] = 53591},
+  [53096487] = {["mapID"] = 100, ["name"] = L["Honor Hold"], ["questID"] = 53592},
   [57187711] = {["mapID"] = 198, ["name"] = L["Throne of Flame"], ["questID"] = 53601},
   [57686281] = {["mapID"] = 379, ["name"] = L["One Keg"], ["questID"] = 53595},
   [61293718] = {["mapID"] = 27, ["name"] = L["Ironforge"], ["questID"] = nil},

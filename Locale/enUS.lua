@@ -25,6 +25,7 @@ L["Elemental Plateau"] = true
 L["Broken Shore"] = true
 L["Skald"] = true
 L["Argent Tournament Grounds"] = true
+L["Honor Hold"] = true
 
 L["Inside Blackrock Mountain"] = true
 L["Undiscovered"] = true
