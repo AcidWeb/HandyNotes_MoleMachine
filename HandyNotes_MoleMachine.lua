@@ -85,28 +85,26 @@ function HN:CheckMap(mapID)
 end
 
 function HN.Plugin:OnEnter(_, coord)
-  local tooltip = self:GetParent() == _G.WorldMapButton and _G.WorldMapTooltip or _G.GameTooltip
   if self:GetCenter() > _G.UIParent:GetCenter() then
-    tooltip:SetOwner(self, "ANCHOR_LEFT")
+    _G.GameTooltip:SetOwner(self, "ANCHOR_LEFT")
   else
-    tooltip:SetOwner(self, "ANCHOR_RIGHT")
+    _G.GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
   end
   local drill = HN.Drills[coord]
   if drill then
-    tooltip:AddLine(drill.name)
+    _G.GameTooltip:AddLine(drill.name)
     if drill.note then
-      tooltip:AddLine(drill.note, 1, 1, 1)
+      _G.GameTooltip:AddLine(drill.note, 1, 1, 1)
     end
     if drill.questID and not IsQuestFlaggedCompleted(drill.questID) then
-      tooltip:AddLine(L["Undiscovered"], 1, 0, 0)
+      _G.GameTooltip:AddLine(L["Undiscovered"], 1, 0, 0)
     end
-    tooltip:Show()
+    _G.GameTooltip:Show()
   end
 end
 
 function HN.Plugin:OnLeave(_, _)
-  local tooltip = self:GetParent() == _G.WorldMapButton and _G.WorldMapTooltip or _G.GameTooltip
-  tooltip:Hide()
+  _G.GameTooltip:Hide()
 end
 
 local function Iterator(t, last)
