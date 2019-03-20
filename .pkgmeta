@@ -2,3 +2,4 @@ enable-nolib-creation: no
 
 ignore:
   - README.md
+  - .luacheckrc

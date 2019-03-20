@@ -5,6 +5,7 @@ local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
 _G.HNMoleMachine = HN
 
 local pairs, next = _G.pairs, _G.next
+local CreateFrame = _G.CreateFrame
 local IsQuestFlaggedCompleted = _G.IsQuestFlaggedCompleted
 local GetMapChildrenInfo = _G.C_Map.GetMapChildrenInfo
 local ElvUI = _G.ElvUI
