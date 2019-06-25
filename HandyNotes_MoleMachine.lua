@@ -114,8 +114,8 @@ local function Iterator(t, last)
   while k do
     if v then
       if v.mapID == HN.CurrentMap or (HN.ContinentData[HN.CurrentMap] and HN.ContinentData[HN.CurrentMap] ~= 0 and HN:CheckMap(v.mapID)) then
-        local icon = (v.questID and not IsQuestFlaggedCompleted(v.questID)) and "MiniMap-DeadArrow" or "MiniMap-QuestArrow"
-        return k, v.mapID, "Interface\\Minimap\\"..icon, HN.Config.Scale, HN.Config.Alpha
+        local icon = (v.questID and not IsQuestFlaggedCompleted(v.questID)) and "DrillUndiscovered" or "Drill"
+        return k, v.mapID, "Interface\\AddOns\\HandyNotes_MoleMachine\\"..icon, HN.Config.Scale, HN.Config.Alpha
       end
     end
     k, v = next(t, k)
