@@ -6,7 +6,7 @@ _G.HNMoleMachine = HN
 
 local pairs, next = _G.pairs, _G.next
 local CreateFrame = _G.CreateFrame
-local IsQuestFlaggedCompleted = _G.IsQuestFlaggedCompleted
+local IsQuestFlaggedCompleted = _G.C_QuestLog.IsQuestFlaggedCompleted
 local GetMapChildrenInfo = _G.C_Map.GetMapChildrenInfo
 local ElvUI = _G.ElvUI
 
