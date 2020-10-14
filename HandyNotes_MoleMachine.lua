@@ -8,7 +8,6 @@ local pairs, next = _G.pairs, _G.next
 local CreateFrame = _G.CreateFrame
 local IsQuestFlaggedCompleted = _G.C_QuestLog.IsQuestFlaggedCompleted
 local GetMapChildrenInfo = _G.C_Map.GetMapChildrenInfo
-local ElvUI = _G.ElvUI
 
 HN.Plugin = {}
 HN.CurrentMap = 0
@@ -68,13 +67,6 @@ HN.Drills = {
   [72421764] = {["mapID"] = 105, ["name"] = L["Skald"], ["questID"] = 53597},
   [76971866] = {["mapID"] = 118, ["name"] = L["Argent Tournament Grounds"], ["questID"] = 53586}
 }
-
-local function ElvUISwag(sender)
-  if sender == "Livarax-BurningLegion" then
-    return [[|TInterface\PvPRankBadges\PvPRank09:0|t ]]
-  end
-  return nil
-end
 
 function HN:CheckMap(mapID)
   for _, p in pairs(HN.ContinentData[HN.CurrentMap]) do
@@ -141,10 +133,6 @@ function HN.Frame:PLAYER_LOGIN()
     if HN.Config[key] == nil then
       HN.Config[key] = value
     end
-  end
-
-  if ElvUI then
-    ElvUI[1]:GetModule("Chat"):AddPluginIcons(ElvUISwag)
   end
 
   HandyNotes:RegisterPluginDB("MoleMachine", HN.Plugin, HN.Options)
