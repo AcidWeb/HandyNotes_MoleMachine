@@ -1,7 +1,7 @@
-## Interface: 90001
+## Interface: 90002
 ## Title: HandyNotes: Mole Machine
 ## Notes: Display locations of Dark Iron Dwarf mole machines.
-## Version: 1.2.0
+## Version: 1.2.1
 ## Author: AcidWeb
 ## RequiredDeps: HandyNotes
 ## SavedVariables: HNMoleMachineConfig
