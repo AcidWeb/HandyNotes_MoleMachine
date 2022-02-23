@@ -1,4 +1,27 @@
 local L = LibStub("AceLocale-3.0"):NewLocale("HandyNotes_MoleMachine", "zhTW")
 if not L then return end
 
---@localization(locale="zhTW", format="lua_additive_table", handle-unlocalized="ignore")@
+L["Aerie Peak"] = "鷹巢山"
+L["Argent Tournament Grounds"] = "銀白聯賽場地"
+L["Blackrock Foundry Overlook"] = "黑石鑄造廠眺望"
+L["Broken Shore"] = "破碎群島"
+L["Elemental Plateau"] = "元素高原"
+L["Fel Pits"] = "惡魔深坑"
+L["Fire Plume Ridge"] = "火羽山"
+L["Icon alpha"] = "圖示透明度"
+L["Icon scale"] = "圖示縮放"
+L["Inside Blackrock Mountain"] = "黑石山裡面"
+L["Ironforge"] = "鐵爐堡"
+L["Mole Machine"] = "鑽地機"
+L["Neltharion's Vault"] = "奈薩里奧巢穴"
+L["Nethergarde Keep"] = "守望堡"
+L["One Keg"] = "獨罈集"
+L["Ruby Dragonshrine"] = "晶紅龍殿"
+L["Shadowforge City"] = "暗爐城"
+L["Stormstout Brewery"] = "風暴烈酒酒坊"
+L["Stormwind"] = "暴風城"
+L["The alpha transparency of the icons."] = "圖示的透明度。"
+L["The Great Divide"] = "大裂口"
+L["The scale of the icons."] = "圖示的大小縮放。"
+L["Throne of Flame"] = "烈焰王座"
+L["Undiscovered"] = "未發現"

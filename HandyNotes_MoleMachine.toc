@@ -5,8 +5,6 @@
 ## Author: AcidWeb
 ## RequiredDeps: HandyNotes
 ## SavedVariables: HNMoleMachineConfig
-## X-Website: https://www.curseforge.com/wow/addons/handynotes-mole-machine
-## X-Curse-Project-ID: 300570
 ## X-WoWI-ID: 24766
 ## X-Wago-ID: baNDD4No
 
