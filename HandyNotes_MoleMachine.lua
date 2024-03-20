@@ -123,10 +123,18 @@ function HN.Plugin:GetNodes2(mapID, _)
 end
 
 HN.Frame = CreateFrame("Frame")
-HN.Frame:RegisterEvent("PLAYER_LOGIN")
+HN.Frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 HN.Frame:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...) end)
 
-function HN.Frame:PLAYER_LOGIN()
+-- Check player unit to see if they are a Dark Iron Dwarf (raceID: 34)
+local function IsDarkIronDwarf()
+  local _,_,raceID = UnitRace("player")
+  return raceID == 34
+end
+
+function HN.Frame:PLAYER_ENTERING_WORLD(isLogin, isReload)
+  -- only process on initial login and only if character is a Dark Iron Dwarf
+  if not isLogin or not IsDarkIronDwarf() then return end
   if not _G.HNMoleMachineConfig then _G.HNMoleMachineConfig = HN.DefaultSettings end
   HN.Config = _G.HNMoleMachineConfig
   for key, value in pairs(HN.DefaultSettings) do
