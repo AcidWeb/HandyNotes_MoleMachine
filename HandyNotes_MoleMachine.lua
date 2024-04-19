@@ -1,13 +1,11 @@
-local _G = _G
 local _, HN = ...
 local L = LibStub("AceLocale-3.0"):GetLocale("HandyNotes_MoleMachine")
 local HandyNotes = LibStub("AceAddon-3.0"):GetAddon("HandyNotes")
-_G.HNMoleMachine = HN
+HNMoleMachine = HN
 
-local pairs, next = _G.pairs, _G.next
-local CreateFrame = _G.CreateFrame
-local IsQuestFlaggedCompleted = _G.C_QuestLog.IsQuestFlaggedCompleted
-local GetMapChildrenInfo = _G.C_Map.GetMapChildrenInfo
+local CreateFrame = CreateFrame
+local IsQuestFlaggedCompleted = C_QuestLog.IsQuestFlaggedCompleted
+local GetMapChildrenInfo = C_Map.GetMapChildrenInfo
 
 HN.Plugin = {}
 HN.CurrentMap = 0
@@ -78,26 +76,26 @@ function HN:CheckMap(mapID)
 end
 
 function HN.Plugin:OnEnter(_, coord)
-  if self:GetCenter() > _G.UIParent:GetCenter() then
-    _G.GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+  if self:GetCenter() > UIParent:GetCenter() then
+    GameTooltip:SetOwner(self, "ANCHOR_LEFT")
   else
-    _G.GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
   end
   local drill = HN.Drills[coord]
   if drill then
-    _G.GameTooltip:AddLine(drill.name)
+    GameTooltip:AddLine(drill.name)
     if drill.note then
-      _G.GameTooltip:AddLine(drill.note, 1, 1, 1)
+      GameTooltip:AddLine(drill.note, 1, 1, 1)
     end
     if drill.questID and not IsQuestFlaggedCompleted(drill.questID) then
-      _G.GameTooltip:AddLine(L["Undiscovered"], 1, 0, 0)
+      GameTooltip:AddLine(L["Undiscovered"], 1, 0, 0)
     end
-    _G.GameTooltip:Show()
+    GameTooltip:Show()
   end
 end
 
 function HN.Plugin:OnLeave(_, _)
-  _G.GameTooltip:Hide()
+  GameTooltip:Hide()
 end
 
 local function Iterator(t, last)
@@ -127,8 +125,8 @@ HN.Frame:RegisterEvent("PLAYER_LOGIN")
 HN.Frame:SetScript("OnEvent", function(self, event, ...) return self[event](self, ...) end)
 
 function HN.Frame:PLAYER_LOGIN()
-  if not _G.HNMoleMachineConfig then _G.HNMoleMachineConfig = HN.DefaultSettings end
-  HN.Config = _G.HNMoleMachineConfig
+  if not HNMoleMachineConfig then HNMoleMachineConfig = HN.DefaultSettings end
+  HN.Config = HNMoleMachineConfig
   for key, value in pairs(HN.DefaultSettings) do
     if HN.Config[key] == nil then
       HN.Config[key] = value

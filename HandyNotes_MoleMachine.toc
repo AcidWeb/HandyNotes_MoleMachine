@@ -9,6 +9,6 @@
 ## X-WoWI-ID: 24766
 ## X-Wago-ID: baNDD4No
 
-TaintLess.xml
+Libs\TaintLess\TaintLess.xml
 Locale\Locale.xml
 HandyNotes_MoleMachine.lua

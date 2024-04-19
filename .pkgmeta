@@ -1,4 +1,7 @@
-enable-nolib-creation: no
+externals:
+  Libs/TaintLess:
+    url: https://www.townlong-yak.com/addons.git/taintless
+    commit: default
 
 ignore:
   - README.md
