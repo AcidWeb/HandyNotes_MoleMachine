@@ -63,7 +63,18 @@ HN.Drills = {
   [65750825] = {["mapID"] = 550, ["name"] = L["Elemental Plateau"], ["questID"] = 53590},
   [71694799] = {["mapID"] = 646, ["name"] = L["Broken Shore"], ["questID"] = 53589},
   [72421764] = {["mapID"] = 105, ["name"] = L["Skald"], ["questID"] = 53597},
-  [76971866] = {["mapID"] = 118, ["name"] = L["Argent Tournament Grounds"], ["questID"] = 53586}
+  [76971866] = {["mapID"] = 118, ["name"] = L["Argent Tournament Grounds"], ["questID"] = 53586},
+  [34344512] = {["mapID"] = 863, ["name"] = L["Zalamar Invasion"], ["questID"] = 80099},
+  [38247238] = {["mapID"] = 862, ["name"] = L["Xibala Incursion"], ["questID"] = 80100},
+  [88227153] = {["mapID"] = 895, ["name"] = L["Wailing Tideways"], ["questID"] = 80101},
+  [64212944] = {["mapID"] = 942, ["name"] = L["Tidebreak Summit"], ["questID"] = 80102},
+  [53495979] = {["mapID"] = 1536, ["name"] = L["Valley of a Thousand Legs"], ["questID"] = 80103},
+  [19903870] = {["mapID"] = 1525, ["name"] = L["Scorched Crypt"], ["questID"] = 80104},
+  [51751314] = {["mapID"] = 1533, ["name"] = L["The Eternal Forge"], ["questID"] = 80105},
+  [66475055] = {["mapID"] = 1565, ["name"] = L["Soryn's Meadow"], ["questID"] = 80106},
+  [32365490] = {["mapID"] = 2022, ["name"] = L["The Slagmire"], ["questID"] = 80107},
+  [80093896] = {["mapID"] = 2024, ["name"] = L["Vakthros Summit"], ["questID"] = 80108},
+  [52732767] = {["mapID"] = 2133, ["name"] = L["Obsidian Rest"], ["questID"] = 80109}
 }
 
 function HN:CheckMap(mapID)

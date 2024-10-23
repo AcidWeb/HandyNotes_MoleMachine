@@ -26,6 +26,17 @@ L["Broken Shore"] = true
 L["Skald"] = true
 L["Argent Tournament Grounds"] = true
 L["Honor Hold"] = true
+L["Zalamar Invasion"] = true
+L["Xibala Incursion"] = true
+L["Wailing Tideways"] = true
+L["Tidebreak Summit"] = true
+L["Valley of a Thousand Legs"] = true
+L["Scorched Crypt"] = true
+L["The Eternal Forge"] = true
+L["Soryn's Meadow"] = true
+L["The Slagmire"] = true
+L["Vakthros Summit"] = true
+L["Obsidian Rest"] = true
 
 L["Inside Blackrock Mountain"] = true
 L["Undiscovered"] = true
